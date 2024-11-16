@@ -1,0 +1,416 @@
+:root {
+  --main-color: rgb(206, 18, 18);
+  --secondary-color: rgb(33, 37, 41);
+  --header-color: rgb(55, 55, 63);
+}
+
+h1,
+h2,
+h3,
+h5 {
+  font-family: "Amatic SC", sans-serif;
+}
+.bg-main {
+  background-color: var(--main-color);
+}
+.text-main{
+  color: var(--main-color);
+}
+.bg-section {
+  background-color: rgb(238, 238, 238);
+}
+.title {
+  text-align: center;
+  margin-bottom: 1.875rem;
+}
+.title p {
+  color: rgb(127, 127, 144);
+  font-size: 0.875rem;
+}
+.title h2 {
+  font-size: 3.125rem;
+}
+.title h2 span {
+  color: var(--main-color);
+}
+.header-color {
+  color: var(--header-color);
+}
+/* Start navbar */
+nav#navbar .navbar-brand, footer h4 {
+  color: var(--secondary-color);
+  font-size: 1.875rem;
+}
+nav#navbar .navbar-brand span ,footer h4 span{
+  color: var(--main-color);
+}
+nav#navbar .nav-item {
+  font-size: 1.0625rem;
+  font-weight: 600;
+}
+nav#navbar .nav-link {
+  padding-inline: 0;
+  margin-left: 20px;
+  position: relative;
+
+  color: #7f7f90;
+}
+
+nav#navbar .nav-link::before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--main-color);
+  left: 0;
+  bottom: -0px;
+  transition: 0.5s width;
+}
+nav#navbar .nav-link.active,
+nav#navbar .nav-link:hover {
+  color: black;
+}
+nav#navbar .nav-link.active::before,
+nav#navbar .nav-link:hover::before {
+  width: 100%;
+}
+nav#navbar .icons {
+  color: var(--secondary-color);
+  font-size: 900;
+  font-size: 1.5625rem;
+}
+@media screen and (max-width: 1200px) {
+  nav#navbar .offcanvas .nav-link::before {
+    width: 0;
+  }
+}
+/* End navbar */
+
+/* Start header */
+
+header h2 {
+  font-size: 4.0625rem;
+}
+header .links {
+  margin-top: 20px; /* Add some space above links */
+}
+header .links .f-link {
+  background-color: var(--main-color);
+  border-radius: 20px;
+  border-top-left-radius: 0;
+  transition: 0.3s background-color;
+}
+header .links .f-link:hover {
+  background-color: hsl(0, 84%, calc(44% + 5%));
+}
+header .links .s-link {
+  color: var(--header-color);
+  font-weight: 600;
+  transition: 0.3s color;
+}
+header .links .s-link span {
+  width: 45px;
+  height: 45px;
+  position: relative;
+  z-index: 2;
+  color: black;
+  transition: 0.3s color;
+}
+header .links .s-link:hover,
+header .links .s-link:hover span {
+  color: var(--main-color);
+}
+header .links .s-link span::before {
+  position: absolute;
+  content: "";
+  width: 135%;
+  height: 135%;
+  background-color: transparent;
+  border: 8px solid var(--main-color);
+  border-color: var(--main-color) transparent transparent var(--main-color);
+  left: -9px;
+  top: -8px;
+  transform: rotate(-47deg);
+  border-radius: 50%;
+  z-index: -2;
+}
+header img {
+  filter: drop-shadow(4px 4px 9px #000a);
+}
+header img:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+@media screen and (max-width: 992px) {
+  header h2 {
+    font-size: 3.0625rem;
+    margin: auto;
+  }
+  header .inner {
+    margin: auto;
+  }
+  header img {
+    width: 58% !important;
+  }
+  header .image-col {
+    order: -1;
+  }
+}
+/* End header */
+
+/* Start chefs */
+#chefs .card {
+  transition: 0.5s scale;
+}
+#chefs .card:hover {
+  scale: 1.05;
+}
+#chefs .wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+#chefs .image {
+  overflow: hidden;
+}
+#chefs .layer {
+  background-color: #ffffff4d;
+  position: absolute;
+  right: -100%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.8s 0.5s right;
+}
+#chefs .card:hover .layer {
+  right: 10px;
+}
+#chefs .layer a {
+  color: #37373f66;
+  transition: 0.3s color;
+}
+#chefs .layer a:hover {
+  color: #37373fe6;
+}
+#chefs h5 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.1875rem;
+}
+#chefs .card-body span {
+  font-size: 0.875rem;
+}
+#chefs .card-body p {
+  font-size: 0.875rem;
+}
+/* End chefs */
+
+/* Start gallery */
+#gallery .items {
+  display: grid;
+  gap: 10px 10px;
+  grid-template-areas:
+    "pizza pizza pizza pizza steak steak steak steak burger burger burger burger"
+    "pizza pizza pizza pizza steak steak steak steak burger burger burger burger"
+    "slices-pizza slices-pizza slices-pizza slices-pizza steak steak steak steak chicken chicken chicken chicken"
+    "slices-pizza slices-pizza slices-pizza slices-pizza steak steak steak steak chicken chicken chicken chicken"
+    "slices-pizza slices-pizza slices-pizza slices-pizza steak steak steak steak kofta kofta kofta kofta"
+    "slices-pizza slices-pizza slices-pizza slices-pizza omlette omlette omlette omlette kofta kofta kofta kofta"
+    ". . . . omlette omlette omlette omlette kofta kofta kofta kofta"
+    ". . . . omlette omlette omlette omlette . . . .";
+}
+
+#gallery .pizza {
+  grid-area: pizza;
+}
+
+#gallery .steak {
+  grid-area: steak;
+}
+
+#gallery .burger {
+  grid-area: burger;
+}
+
+#gallery .slices-pizza {
+  grid-area: slices-pizza;
+}
+
+#gallery .omlette {
+  grid-area: omlette;
+}
+
+#gallery .chicken {
+  grid-area: chicken;
+}
+
+#gallery .kofta {
+  grid-area: kofta;
+}
+
+#gallery .items > div {
+  background-color: white;
+  padding: 5px;
+}
+#gallery .image {
+  overflow: hidden;
+}
+#gallery .items .layer {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0 100%);
+  transform: translateY(105%);
+  transition: 0.5s transform;
+}
+#gallery .items > div:hover .layer {
+  transform: translateY(0);
+}
+#gallery .items > div:hover img {
+  scale: 1.2;
+}
+#gallery .items > div img {
+  transition: 0.3s scale;
+}
+@media screen and (max-width: 992px) {
+  #gallery .items {
+    grid-template-areas:
+      "pizza pizza pizza pizza pizza pizza steak steak steak steak steak steak"
+      "pizza pizza pizza pizza pizza pizza steak steak steak steak steak steak"
+      "burger burger burger burger burger burger steak steak steak steak steak steak"
+      "burger burger burger burger burger burger steak steak steak steak steak steak"
+      "slices-pizza slices-pizza slices-pizza slices-pizza slices-pizza slices-pizza steak steak steak steak steak steak"
+      "slices-pizza slices-pizza slices-pizza slices-pizza slices-pizza slices-pizza chicken chicken chicken chicken chicken chicken"
+      "slices-pizza slices-pizza slices-pizza slices-pizza slices-pizza slices-pizza chicken chicken chicken chicken chicken chicken"
+      "slices-pizza slices-pizza slices-pizza slices-pizza slices-pizza slices-pizza kofta kofta kofta kofta kofta kofta"
+      "omlette omlette omlette omlette omlette omlette kofta kofta kofta kofta kofta kofta"
+      "omlette omlette omlette omlette omlette omlette . . . . . .";
+  }
+}
+@media screen and (max-width: 768px) {
+  #gallery .items {
+    grid-template-areas:
+      "pizza pizza pizza pizza pizza pizza pizza pizza pizza pizza pizza pizza"
+      "burger burger burger burger burger burger burger burger burger burger burger burger"
+      "slices-pizza slices-pizza slices-pizza slices-pizza slices-pizza slices-pizza slices-pizza slices-pizza slices-pizza slices-pizza slices-pizza slices-pizza "
+      "omlette omlette omlette omlette omlette omlette omlette omlette omlette omlette omlette omlette"
+      "steak steak steak steak steak steak steak steak steak steak steak steak"
+      "chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken chicken"
+      "kofta kofta kofta kofta kofta kofta kofta kofta kofta kofta kofta kofta";
+  }
+}
+/* End gallery */
+
+/* Start contact */
+#contact iframe{
+  width: 100% ;
+}
+#contact .icon{
+  width: 55px;
+  height: 55px;
+}
+#contact h4{
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+}
+#contact p,#contact a{
+  color: rgb(33, 37, 41);
+}
+#contact form .form-control{
+  border: 2px solid  hsl( 0, calc(0% + 10%), calc(100% - 10%));
+}
+#contact form .form-control:focus{
+  border-color: var(--main-color);
+  box-shadow: none;
+  caret-color: var(--main-color);
+}
+#contact form button.btn:hover{
+background-color: hsl( 0, 84%, calc(44% + 5%) );
+}
+@media screen and (min-width:768px) and (max-width:992px) {
+   #contact .col-md-6.link .inner{
+   padding-bottom: 40px !important;  
+   } 
+}
+/* End contact */
+
+/* Start footer */
+footer{
+  background-image: linear-gradient(rgba(0,0,0,.5) 0 100%), url(../images/textured-metal-background.jpg);
+  background-position: center;
+  background-size: cover;
+}
+footer img{
+  width: 40px;
+}
+footer .container h4{
+  color: white;
+}
+footer h6{
+  font-size: 1.1875rem;
+  padding-bottom: 10px;
+}
+footer .h6-border{
+  border-bottom: 2px solid #ddd6;
+
+}
+footer .form .col-sm-9{
+  padding-right: 0;
+}
+footer .form-control:focus{
+    box-shadow: none;
+}
+footer .links ul li{
+  transition: 0.3s background-color,0.3s transform;
+  padding: 5px;
+}
+footer .links ul li:hover{
+  background-color: #222;
+  transform: translateX(10px);
+}
+footer .icon i{
+  font-weight: 900;
+  font-size: 1.375rem;
+}
+@media screen and (min-width:768px) and (max-width:1200px) {
+         .second{
+           order: 3;
+         }
+         .third{
+           order: 2;
+         }
+}
+/* End footer */
